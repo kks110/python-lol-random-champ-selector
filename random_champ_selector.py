@@ -11,12 +11,16 @@ def setup():
 def app():
     champs = file_io.champ_list_after_bans()
     champ_count = len(champs)
-    player_count = input('How many players need champs picked for them?: ')
-    champs_per_player = input('How many champs per player?: ')
-    for player in range(int(player_count)):
-        print('\nPlayer ' + str(int(player)+1) + ':')
-        for champ in range(int(champs_per_player)):
-            print(champs[random.randint(0, (champ_count-1))])
+    while True:
+        player_count = input('How many players need champs picked for them?: ')
+        champs_per_player = input('How many champs per player?: ')
+        for player in range(int(player_count)):
+            print('\nPlayer ' + str(int(player)+1) + ':')
+            for champ in range(int(champs_per_player)):
+                print(champs[random.randint(0, (champ_count-1))])
+        loop = input('\nWould you like to get more random champs? (Y/n): ')
+        if loop.lower() == 'n':
+            break
 
 
 def main():
