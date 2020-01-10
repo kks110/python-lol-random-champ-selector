@@ -1,27 +1,28 @@
-import os.path
+import random
 import setup_helper
-import lol_api_call
+import file_io
 
 
 def setup():
     setup_helper.install_dependencies()
+    file_io.create_champ_list()
 
 
-def create_champ_list():
-    if not os.path.exists('champ_list.txt'):
-        lol_api_call.save_champs()
-        print('Downloading champion list...')
-    if lol_api_call.champion_count() != lol_api_call.saved_champ_count():
-        print('Looks like there are some new champs\nDownloading...')
-        lol_api_call.save_champs()
-    print('Download complete!')
-
+def app():
+    champs = file_io.champ_list_after_bans()
+    champ_count = len(champs)
+    player_count = input('How many players need champs picked for them?: ')
+    champs_per_player = input('How many champs per player?: ')
+    for player in range(int(player_count)):
+        print('\nPlayer ' + str(int(player)+1) + ':')
+        for champ in range(int(champs_per_player)):
+            print(champs[random.randint(0, (champ_count-1))])
 
 
 def main():
     setup()
-    create_champ_list()
-    input()
+    app()
+
 
 if __name__ == "__main__":
     main()

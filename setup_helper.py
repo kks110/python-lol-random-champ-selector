@@ -8,9 +8,9 @@ def installed_packages():
 
 
 def install_dependencies():
-    print('Checking dependnecies are installed')
+    print('Checking dependencies are installed')
     if 'requests' not in installed_packages():
         print("Missing dependency 'Requests'. Installing:")
         subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'requests'])
-    print('All dependancies installed')
+    print('All dependencies installed')
 

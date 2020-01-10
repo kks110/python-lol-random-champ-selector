@@ -1,3 +1,4 @@
+import os.path
 import requests
 
 
@@ -16,16 +17,5 @@ def get_champs():
     return list(champ_data['data'].keys())
 
 
-def save_champs():
-    champ_list = get_champs()
-    file = open('champ_list.txt', 'w')
-    for champ in champ_list:
-        file.write(champ + "\n")
-
-
-def saved_champ_count():
-    return len(open('champ_list.txt').readlines())
-
-
-def champion_count():
+def riot_champion_count():
     return len(get_champs())
