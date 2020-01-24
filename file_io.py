@@ -62,5 +62,10 @@ def champ_list_after_bans():
 
 
 def save_bracket(bracket):
-    with open('bracket.json', 'w') as fp:
-        json.dump(bracket, fp)
+    with open('bracket.json', 'w') as json_file:
+        json.dump(bracket, json_file)
+
+
+def load_bracket():
+    with open('bracket.json') as json_file:
+        return json.load(json_file)
