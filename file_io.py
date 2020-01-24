@@ -1,5 +1,6 @@
 import os.path
 import lol_api_call
+import json
 
 
 def save_champs():
@@ -58,3 +59,8 @@ def champ_list_after_bans():
         if champ in all_champs:
             all_champs.remove(champ)
     return all_champs
+
+
+def save_bracket(bracket):
+    with open('bracket.json', 'w') as fp:
+        json.dump(bracket, fp)
