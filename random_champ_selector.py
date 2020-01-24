@@ -1,7 +1,6 @@
-import random
 import setup_helper
 import file_io
-
+import random_champ_generator
 
 def setup():
     setup_helper.install_dependencies()
@@ -16,8 +15,8 @@ def app():
         champs_per_player = input('How many champs per player?: ')
         for player in range(int(player_count)):
             print('\nPlayer ' + str(int(player)+1) + ':')
-            for champ in range(int(champs_per_player)):
-                print(champs[random.randint(0, (champ_count-1))])
+            print(random_champ_generator.generate_champs(int(champs_per_player)))
+
         loop = input('\nWould you like to get more random champs? (Y/n): ')
         if loop.lower() == 'n':
             break
