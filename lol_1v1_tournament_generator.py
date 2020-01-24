@@ -1,6 +1,7 @@
 import setup_helper
 import file_io
-import random_champ_generator
+import bracket_creator
+import gui_builder
 
 
 def setup():
@@ -9,16 +10,18 @@ def setup():
 
 
 def app():
-    while True:
-        player_count = input('How many players need champs picked for them?: ')
-        champs_per_player = input('How many champs per player?: ')
-        for player in range(int(player_count)):
-            print('\nPlayer ' + str(int(player)+1) + ':')
-            print(random_champ_generator.generate_champs(int(champs_per_player)))
-
-        loop = input('\nWould you like to get more random champs? (Y/n): ')
-        if loop.lower() == 'n':
-            break
+    player_count = input('How many players?: ')
+    champ_count = input('How many champs per player?: ')
+    bracket_creator.get_players(player_count, champ_count)
+    bracket = file_io.load_bracket()
+    while len(bracket) > 0:
+        counter = 1
+        for x in range(len(bracket)):
+            gui_builder.match_builder(int(x)+1, bracket['match_%s' % counter])
+            counter += 1
+        print('Good Luck summoners\n\n')
+        bracket_creator.round_complete(bracket, champ_count)
+        bracket = file_io.load_bracket()
 
 
 def main():
