@@ -2,14 +2,13 @@ import setup_helper
 import file_io
 import random_champ_generator
 
+
 def setup():
     setup_helper.install_dependencies()
     file_io.create_champ_list()
 
 
 def app():
-    champs = file_io.champ_list_after_bans()
-    champ_count = len(champs)
     while True:
         player_count = input('How many players need champs picked for them?: ')
         champs_per_player = input('How many champs per player?: ')
