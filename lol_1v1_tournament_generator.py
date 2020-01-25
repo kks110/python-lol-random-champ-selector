@@ -2,6 +2,7 @@ import setup_helper
 import file_io
 import bracket_generator
 import gui_generator
+import validation_helpers
 
 
 def setup():
@@ -10,8 +11,9 @@ def setup():
 
 
 def app():
-    player_count = input('How many players?: ')
-    champ_count = input('How many champs per player?: ')
+    player_count = validation_helpers.player_count_validation()
+    champ_count = validation_helpers.champion_count_validation()
+
     bracket_generator.get_players(player_count, champ_count)
     bracket = file_io.load_bracket()
     while len(bracket) > 0:
