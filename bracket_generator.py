@@ -5,27 +5,25 @@ import file_io
 
 def get_players(player_count, champ_count):
     player_list = []
-    counter = 1
-    for x in range(int(player_count)):
+    for x in range(player_count):
+        counter = x + 1
         player = input('Please enter player %s: ' % counter)
         player_list.append(player)
-        counter += 1
-    player_bracket = create_bracket(player_list, int(champ_count))
+    player_bracket = create_bracket(player_list, champ_count)
     file_io.save_bracket(player_bracket)
 
 
 def round_complete(bracket, champ_count):
     player_list = []
-    counter = 1
     if len(bracket) == 1:
         player_bracket = {}
         file_io.save_bracket(player_bracket)
         return
     for x in range(len(bracket)):
+        counter = x + 1
         game_winner = input('Who won game %s: ' % counter)
         player_list.append(game_winner)
-        counter += 1
-    player_bracket = create_bracket(player_list, int(champ_count))
+    player_bracket = create_bracket(player_list, champ_count)
     file_io.save_bracket(player_bracket)
 
 

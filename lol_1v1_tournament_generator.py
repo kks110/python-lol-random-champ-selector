@@ -17,10 +17,9 @@ def app():
     bracket_generator.get_players(player_count, champ_count)
     bracket = file_io.load_bracket()
     while len(bracket) > 0:
-        counter = 1
-        for x in range(len(bracket)):
-            gui_generator.match_builder(int(x) + 1, bracket['match_%s' % counter])
-            counter += 1
+        for number in range(len(bracket)):
+            match_number = number + 1
+            gui_generator.match_builder(match_number, bracket['match_%s' % match_number])
         print('Good Luck summoners\n\n')
         bracket_generator.round_complete(bracket, champ_count)
         bracket = file_io.load_bracket()
