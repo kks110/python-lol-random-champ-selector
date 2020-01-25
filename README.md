@@ -1,20 +1,31 @@
 ## Random Champ Selector
 
-Ever been in a situation where you are running a 1v1 League of Legends tournement and you want everyone to be assigned a random set of champions?
+```json
+{
+  "Version": "2.0.0",
+  "Python_Version": "3.8.0",
+  "Requierments": {
+    "requests": "2.22.0"
+  }
+}
+```
 
-Maybe there are even a group you champs you all have so much that you don't want to see them in your 'Fun' tournement.
+Ever been in a situation where you are running a 1v1 League of Legends tournament and you want everyone to be randomly paired assigned a random set of champions?
 
-This with this tool, you can achieve all this.
+Maybe there are even a group of champions that you all hate so much that you don't want to see them in your tournament.
 
-Clone this repo, and run the `random_champ_selector.py` file.
+
+With this tool, you can achieve all this.
+
+Clone this repo, and run the `lol_1v1_tournament_generator.py` file.
 
 It will install the necessary dependencies (`requests`) and then run the program. 
 
-First, it will call the Riot API and check that the champ file it still up to date. If not, it will updated it with the newly released champs.
+It will ask how many players there are, and how many champions you want each player to have and it will create your matches.
+
+It will call the Riot API and check that the champ file it still up to date. If not, it will updated it with the newly released champs.
 It will also then ask to update your ban template file as well.
 
 To stop any champs from being randomly picked, simply go in to the `banned_champs.txt` file and remove the `#` from in front of their name.
 
-It will ask how many players and how many champs to be randomly selected for each, then print that out to the terminal.
-
-![Demo](demo.png)
+Once a round it complete, it will ask you to enter the winners of the matches and then generate a new set of matches and a new set of champs.
