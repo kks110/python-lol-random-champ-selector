@@ -40,7 +40,7 @@ def ban_menu():
         print("Would you like to:")
         print("    1 - See currently banned champs?")
         print("    2 - Ban a champ?")
-        print("    3 - Unban a champ")
+        print("    3 - Un-ban a champ")
         print("    4 - Return to main menu")
         choice = validation_helpers.multiple_choice_validation(2)
         if choice == 1:
