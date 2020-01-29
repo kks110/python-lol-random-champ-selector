@@ -17,12 +17,12 @@ def champion_count_validation():
             print('Please enter a valid number of champs')
 
 
-def main_menu_validation():
+def multiple_choice_validation(choice_count):
     while True:
-        bracket_or_ban = input("(Please enter either 1 or 2): ")
+        bracket_or_ban = input("(Please enter a number between 1 and %s): " % str(choice_count))
         try:
             choice = int(bracket_or_ban)
-            if 0 < choice <= 2:
+            if 0 < choice <= choice_count:
                 return choice
         except ValueError:
-            print("Choice must be a number between 1 and 2")
+            print("Choice must be a number between 1 and %s" % choice_count)

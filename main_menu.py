@@ -6,7 +6,7 @@ def main_menu():
     print("Would you like to:")
     print("    1 - Create a tournament?")
     print("    2 - Check the ban situation")
-    choice = validation_helpers.main_menu_validation()
+    choice = validation_helpers.multiple_choice_validation(2)
     if choice == 1:
         return "bracket"
     else:

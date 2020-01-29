@@ -4,6 +4,7 @@ import bracket_generator
 import gui_generator
 import validation_helpers
 import main_menu
+import global_bans
 
 
 def setup():
@@ -28,6 +29,8 @@ def app():
             print('Good Luck summoners\n\n')
             bracket_generator.round_complete(bracket, champ_count)
             bracket = file_io.load_bracket()
+    elif start_point == "bans":
+        global_bans.ban_menu()
 
 
 def main():

@@ -53,6 +53,12 @@ def banned_champs():
     return [line.rstrip('\n') for line in open('banned_champs.txt')]
 
 
+def save_bans(ban_list):
+    file = open('banned_champs.txt', 'w')
+    for champ in ban_list:
+        file.write(champ + "\n")
+
+
 def champ_list_after_bans():
     all_champs = read_champs()
     for champ in banned_champs():
