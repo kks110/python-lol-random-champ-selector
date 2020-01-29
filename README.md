@@ -4,7 +4,7 @@
 {
   "Version": "2.0.0",
   "Python_Version": "3.8.0",
-  "Requierments": {
+  "Requirements": {
     "requests": "2.22.0"
   }
 }
