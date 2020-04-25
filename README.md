@@ -17,9 +17,12 @@ Maybe there are even a group of champions that you all hate so much that you don
 
 With this tool, you can achieve all this.
 
-Clone this repo, and run the `lol_1v1_tournament_generator.py` file.
+Before you run, you need to install requests:
+```bash
+pip install -U requests
+```
 
-It will install the necessary dependencies (`requests`) and then run the program. 
+Clone this repo, and run the `lol_1v1_tournament_generator.py` file.
 
 It will ask how many players there are, and how many champions you want each player to have and it will create your matches.
 

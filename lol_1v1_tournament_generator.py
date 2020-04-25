@@ -1,4 +1,3 @@
-import setup_helper
 import file_io
 import bracket_generator
 import gui_generator
@@ -8,7 +7,6 @@ import global_bans
 
 
 def setup():
-    setup_helper.install_dependencies()
     file_io.create_champ_list()
 
 
