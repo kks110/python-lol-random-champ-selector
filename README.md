@@ -2,7 +2,7 @@
 
 ```json
 {
-  "Version": "2.0.0",
+  "Version": "2.0.1",
   "Python_Version": "3.8.0",
   "Requirements": {
     "requests": "2.22.0"
